@@ -46,3 +46,9 @@ instantly, with no manual work.
 Freelancers and agency owners who want to automate 
 client onboarding without losing the personal touch.
 
+## Tags
+
+`n8n` `zapier` `ai-automation` `workflow` 
+`google-gemini` `gmail` `client-onboarding` 
+`email-automation` `no-code` `ai-agent` 
+`freelance-tools`
