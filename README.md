@@ -1,3 +1,7 @@
+<img width="1600" height="821" alt="Image" src="https://github.com/user-attachments/assets/350ca340-1716-4b48-a8a4-86d3fdc27db5" />
+<img width="1600" height="811" alt="Image" src="https://github.com/user-attachments/assets/7725adea-c752-4858-9b5e-d9ab0baf9af3" />
+<img width="1600" height="811" alt="Image" src="https://github.com/user-attachments/assets/9d7739fa-53f1-4da9-b047-69f5e8ac3842" />
+<img width="1600" height="810" alt="Image" src="https://github.com/user-attachments/assets/c5c55827-e964-46c5-aa3d-401d9c675a0a" />
 # AI-Vibe Client Intake Automation
 
 > Automatically send personalized consultation reply 
