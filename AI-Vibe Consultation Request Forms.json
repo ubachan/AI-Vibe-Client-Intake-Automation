@@ -1,0 +1,329 @@
+{
+  "name": "AI-Vibe Consultation Request Forms",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "=Let’s Automate Your Business🚀",
+        "formDescription": "Got a workflow to automate, an AI agent to build, a chatbot to deploy, or a SaaS idea to launch? \nTell me what you're working on — I'll review your use case and get back to you within 12-24 hours via email.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Full Name",
+              "placeholder": "e.g. Alex Morgan",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email Address",
+              "fieldType": "email",
+              "placeholder": "e.g. alex@example.com",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Company Name or Website (Optional)",
+              "placeholder": "e.g. company.com or N/A"
+            },
+            {
+              "fieldLabel": "What do you need help with?",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Workflow Automation (n8n Pipelines)"
+                  },
+                  {
+                    "option": "Custom AI Agents & Chatbots"
+                  },
+                  {
+                    "option": "Full-Stack Web App / SaaS Development"
+                  },
+                  {
+                    "option": "Database & Backend Setup (Supabase)"
+                  },
+                  {
+                    "option": "Other / Consultation"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Describe your project or manual bottlenecks",
+              "placeholder": "Briefly share what you want to automate, build, or fix..."
+            }
+          ]
+        },
+        "options": {
+          "appendAttribution": false,
+          "useWorkflowTimezone": true
+        }
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        0,
+        0
+      ],
+      "id": "fad3f9c5-fc9c-454a-a427-01d027b41711",
+      "name": "On form submission",
+      "webhookId": "08adee7a-3fa0-48c4-8c41-5006b7d055a2"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1iSAZ1jxiPpHSVZhOlkrEFNmiQEKCZRiAcGmO136MmcY",
+          "mode": "list",
+          "cachedResultName": "AI-Vibe Consultation Request Forms Submitted Data",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1iSAZ1jxiPpHSVZhOlkrEFNmiQEKCZRiAcGmO136MmcY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1565708258,
+          "mode": "list",
+          "cachedResultName": "n8n Form Responses",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1iSAZ1jxiPpHSVZhOlkrEFNmiQEKCZRiAcGmO136MmcY/edit#gid=1565708258"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Full Name": "={{ $json['Full Name'] }}",
+            "Email Address": "={{ $json['Email Address'] }}",
+            "Company Name or Website (Optional)": "={{ $json['Company Name or Website (Optional)'] }}",
+            "What do you need help with?": "={{ $json['What do you need help with?'] }}",
+            "Timestamp": "={{ $json.submittedAt }}",
+            "Describe your project or manual bottlenecks": "={{ $json[\"Describe your project or manual bottlenecks\"] }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Full Name",
+              "displayName": "Full Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email Address",
+              "displayName": "Email Address",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Company Name or Website (Optional)",
+              "displayName": "Company Name or Website (Optional)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "What do you need help with?",
+              "displayName": "What do you need help with?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Describe your project or manual bottlenecks",
+              "displayName": "Describe your project or manual bottlenecks",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Timestamp",
+              "displayName": "Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "df2198ea-245f-4963-b3ac-e54fc545f282",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "krXe1vgVvXcADGFa",
+          "name": "Google Sheets Aivibe - 01"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are Uba Chan, Expert AI Automation Engineer at AI Vibe. Write a professional consultation reply email — warm, structured, but concise.\n\nCLIENT INFO:\n- Name: {{ $json[\"Full Name\"] }}\n- Company: {{ $json[\"Company Name or Website (Optional)\"] }}\n- Service: {{ $json[\"What do you need help with?\"] }}\n- Project Details: {{ $json[\"Describe your project or manual bottlenecks\"] }}\n\nSERVICE TALKING POINTS (use only the matching one):\n- Workflow Automation (n8n): eliminate manual tasks, connect apps, save hundreds of hours via automated pipelines\n- Custom AI Agents & Chatbots: context-aware LLM agents, smart support, automated decision-making\n- Full-Stack Web App / SaaS: rapid prototyping, clean codebases, production-ready architecture\n- Database & Backend (Supabase): robust schemas, secure scaling, real-time data, efficient backend\n- Other / Consultation: diagnose unique business bottlenecks conversationally\n\nEMAIL STRUCTURE (follow exactly):\n1. Greeting: \"Hello [Name],\"\n2. One sentence: thank them + acknowledge their company if provided\n3. One sentence: reference their specific project/bottleneck + what AI Vibe does for that service\n4. One sentence: currently reviewing, will follow up within 12-24 hours with a plan or booking link\n5. One warm closing line (e.g. \"Looking forward to working on this with you.\")\n6. Sign-off: \"Best regards,\\nUba Chan | AI Vibe Automation Team\"\n\nTONE RULES:\n- Professional, warm, confident\n- No fluff, no long paragraphs\n- Max 4 sentences in body",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        416,
+        0
+      ],
+      "id": "80cf1458-11ca-4c72-a2ca-9dacacdb660a",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        352,
+        176
+      ],
+      "id": "5be2e45b-3428-465b-b4e1-459399d0e64a",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "90CkwcgvSwUS4AYb",
+          "name": "Gemini API Key AIvibe"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Append row in sheet').item.json[\"Email Address\"] }}",
+        "subject": "={{ $json.output.subject }}",
+        "emailType": "text",
+        "message": "={{ $json.output.body }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        768,
+        0
+      ],
+      "id": "92226dc1-45e1-4024-870a-1f10d49961d1",
+      "name": "Send a message",
+      "webhookId": "d1d08f58-552e-43d6-bda1-66981c3dfae0",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "qjmlZtUs1tSwtxq0",
+          "name": "Gmail Aivibe"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"subject\": \"🚀 Streamlining Your Business - AI Vibe Consultation\",\n  \"body\": \"Hi, Thank you for reaching out to AI Vibe...\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        592,
+        208
+      ],
+      "id": "8854c669-1179-4e49-b2bb-a3bcd240ed0e",
+      "name": "Structured Output Parser"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "timezone": "Asia/Dhaka",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "bbf39cd2-9ad0-407d-8c53-c7ed4454701f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "5f00bba974abf03cb5183d4d65f8a9645a781b04770df6a7d08284fca87d50b3"
+  },
+  "id": "6QAhCkW3SM6k7QV0",
+  "tags": []
+}
